@@ -25,7 +25,7 @@ class PageController extends Controller {
 	 * @NoCSRFRequired
 	 */
 	public function index() {
-		return new TemplateResponse('archiveviewer', 'index');  // templates/index.php
+		return new TemplateResponse('archive-viewer', 'index');  // templates/index.php
 	}
 
 }

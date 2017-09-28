@@ -1,6 +1,6 @@
 <?php
-script('archiveviewer', 'script');
-style('archiveviewer', 'style');
+script('archive-viewer', 'script');
+style('archive-viewer', 'style');
 ?>
 
 <div id="app">

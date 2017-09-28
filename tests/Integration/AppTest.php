@@ -17,13 +17,13 @@ class AppTest extends TestCase {
 
     public function setUp() {
         parent::setUp();
-        $app = new App('archiveviewer');
+        $app = new App('archive-viewer');
         $this->container = $app->getContainer();
     }
 
     public function testAppInstalled() {
         $appManager = $this->container->query('OCP\App\IAppManager');
-        $this->assertTrue($appManager->isInstalled('archiveviewer'));
+        $this->assertTrue($appManager->isInstalled('archive-viewer'));
     }
 
 }
