@@ -4,20 +4,20 @@
 	$urlGenerator = \OC::$server->getURLGenerator();
 	return [
 		//id used by the rest of nextcloud
-		'id' => 'archive-viewer',
+		'id' => 'Nextcloud-Archive-Viewer',
 	
 		//sorting weight
 		'order' => 10,
 		
 		//the rout that will be shown on startup
-		'href' => $urlGenerator ->linkToRoute('Nextcloud-archive-viewer.page.index'),
+		'href' => $urlGenerator ->linkToRoute('Nextcloud-Archive-Viewer.page.index'),
 
 		//icon to show in navigation
 		//TODO create a img
 		//'icon' => $urlGenertator -> imagePath('archive-viewer', 'app.svg'),
 
 		//app name to used externaly
-		'name' => \OC::$server->getL10N('archive-viewer')->t('Archive Viewer'),
+		'name' => \OC::$server->getL10N('Nextcloud-Archive-Viewer')->t('Archive Viewer'),
 
 	];
 });

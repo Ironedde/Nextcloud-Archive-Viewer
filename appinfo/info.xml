@@ -1,14 +1,15 @@
 <?xml version="1.0"?>
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-    <id>archiveviewer</id>
+    <id>Nextcloud-Archive-Viewer</id>
     <name>Archive Viewer</name>
     <summary>This app will allow you to view compressed archives straight in your file window.</summary>
     <description><![CDATA[Archive-Viewer enables all users to view compressed archives straight in their files window, without extracting them.]]></description>
-    <licence>agpl</licence>
+    <licence>AGPL</licence>
     <author mail="edvin.akerfeldt@hotmail.com" >Edvin Åkerfeldt</author>
+    <author mail="samuel_karlsson@home.se" >Samuel Karlsson</author>
     <version>0.0.1</version>
-    <namespace>ArchiveViewer</namespace>
+    <namespace>\OCA\ArchiveViewer</namespace>
     <category>files</category>
     <category>tools</category>
     <bugs>https://github.com/Ironedde/Nextcloud-Archive-Viewer/issues</bugs>
