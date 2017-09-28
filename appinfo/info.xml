@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-    <id>archiveviewer</id>
+    <id>Nextcloud-Archive-Viewer</id>
     <name>Archive Viewer</name>
     <summary>This app will allow you to view compressed archives straight in your file window.</summary>
     <description><![CDATA[Archive-Viewer enables all users to view compressed archives straight in their files window, without extracting them.]]></description>
