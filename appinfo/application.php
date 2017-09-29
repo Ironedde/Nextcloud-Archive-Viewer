@@ -8,7 +8,7 @@ use \OCA\ArchiveViewer\Controller\PageController;
 class Application extends App {
 
     public function __construct(array $urlParams=array()){
-        parent::__construct('Nextcloud-Archive-Viewer', $urlParams);
+        parent::__construct('archive-viewer', $urlParams);
 
 	        $container = $this->getContainer();
 

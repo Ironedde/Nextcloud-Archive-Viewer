@@ -1,23 +1,23 @@
 <?php
 
-\OC::$server->getNavigationManeger()->add(fuvction(){
+\OC::$server->getNavigationManager()->add(function(){
 	$urlGenerator = \OC::$server->getURLGenerator();
 	return [
 		//id used by the rest of nextcloud
-		'id' => 'Nextcloud-Archive-Viewer',
+		'id' => 'archive-viewer',
 	
 		//sorting weight
 		'order' => 10,
 		
 		//the rout that will be shown on startup
-		'href' => $urlGenerator ->linkToRoute('Nextcloud-Archive-Viewer.page.index'),
+		'href' => $urlGenerator ->linkToRoute('archive-viewer.page.index'),
 
 		//icon to show in navigation
 		//TODO create a img
 		//'icon' => $urlGenertator -> imagePath('archive-viewer', 'app.svg'),
 
 		//app name to used externaly
-		'name' => \OC::$server->getL10N('Nextcloud-Archive-Viewer')->t('Archive Viewer'),
+		'name' => \OC::$server->getL10N('archive-viewer')->t('Archive Viewer'),
 
 	];
 });
