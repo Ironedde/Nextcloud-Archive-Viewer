@@ -12,6 +12,6 @@ return [
     'routes' => [
 	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
 	   ['name' => 'page#do_echo', 'url' => '/echo', 'verb' => 'POST'],
-	   ['name' => 'config#get', 'url' => '/ajax/settings', 'verb' => 'GET'],
+	   ['name' => 'config#get', 'url' => '/ajax/config', 'verb' => 'GET'],
     ]
 ];

@@ -16,7 +16,7 @@
                 return;
             }
 
-            $.get(OC.generateUrl("apps/" + OCA.ArchiveViewer.AppName + "/ajax/settings"))
+            $.get(OC.generateUrl("apps/" + OCA.ArchiveViewer.AppName + "/ajax/config"))
             .done(function (json) {
                 //OCA.AppSettings = json.settings;
                 OCA.ArchiveViewer.Mimes = json.formats;
