@@ -20,10 +20,4 @@
     <dependencies>
         <nextcloud min-version="12" max-version="12"/>
     </dependencies>
-    <navigations>
-        <navigation>
-            <name>Archive Viewer</name>
-            <route>archive-viewer.page.index</route>
-        </navigation>
-    </navigations>
 </info>

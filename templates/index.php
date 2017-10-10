@@ -1,7 +1,17 @@
 <?php
 script('archive-viewer', 'script');
 style('archive-viewer', 'style');
+
+//Load breadcrumb script from files app
+//style('files','files')
+
+style('files','merged');
+style('files','mobile');
+style('files','upload');
+style('files','detailsView');
 ?>
+
+
 
 <div id="app">
 	<div id="app-navigation">

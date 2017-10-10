@@ -11,7 +11,9 @@ namespace OCA\ArchiveViewer\AppInfo;
 
 use OCP\AppFramework\App;
 use OCA\ArchiveViewer\Controller\ConfigController;
+use OCA\ArchiveViewer\Controller\ViewerController;
 
+use \OCP\IContainer;
 /**
  * Class Application
  *
@@ -31,7 +33,7 @@ class Application extends App {
         parent::__construct($appName, $urlParams);
 
         $container = $this->getContainer();
-		
+		$server = $container->getServer();
 		/** 
 		 * Controllers
 		 */
@@ -42,6 +44,21 @@ class Application extends App {
                 $c->query("Request"),
                 $c->query("Logger")
             );
+		});
+		$container->registerService("ViewerController",function(IContainer $c) use ($server)
+		{
+			return new ViewerController(
+				$c->query("AppName"),
+				$c->query("Request"),
+				$c->query("Logger"),
+				$server->getRootFolder(),
+                $c->query("OCP\IUserSession"),
+				$server->getUserSession(),
+				$server->getConfig()->getSystemValue("datadirectory")
+			);
+			//$c->getRootFolder(),
+			//$c->query('OCP\Files\IRootFolder'),
+			//$c->query("RootStorage"),
 		});
 	}
 }

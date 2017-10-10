@@ -11,5 +11,4 @@ $appName = $c->query('AppName');
 $eventDispatcher = \OC::$server->getEventDispatcher();
 $eventDispatcher->addListener('OCA\Files::loadAdditionalScripts', function(){
     Util::addScript('archive-viewer', 'archiveMain' );
-    Util::addScript('archive-viewer', 'archiveMain' );
 });

@@ -10,7 +10,7 @@
 namespace OCA\ArchiveViewer\AppInfo;
 return [
     'routes' => [
-	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
+	   ['name' => 'viewer#index', 'url' => '/{fileId}', 'verb' => 'GET'],
 	   ['name' => 'page#do_echo', 'url' => '/echo', 'verb' => 'POST'],
 	   ['name' => 'config#get', 'url' => '/ajax/config', 'verb' => 'GET'],
     ]
