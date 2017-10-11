@@ -14,6 +14,7 @@ use OCA\ArchiveViewer\Controller\ConfigController;
 use OCA\ArchiveViewer\Controller\ViewerController;
 
 use \OCP\IContainer;
+use \OCP\IURLGenerator;
 /**
  * Class Application
  *
@@ -52,11 +53,10 @@ class Application extends App {
 				$c->query("Request"),
 				$c->query("Logger"),
 				$server->getRootFolder(),
-                $c->query("OCP\IUserSession"),
-				$server->getUserSession(),
-				$server->getConfig()->getSystemValue("datadirectory")
+                $c->query("OCP\IUserSession")
 			);
 			//$c->getRootFolder(),
+			//$server->getConfig()->getSystemValue("datadirectory")
 			//$c->query('OCP\Files\IRootFolder'),
 			//$c->query("RootStorage"),
 		});

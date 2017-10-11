@@ -115,33 +115,37 @@
 			}
 		}
 	}
-	function printHTML(FileObject $obj){
-		echo '
-		<tr>
-			<td class="filename" style="padding-left:' . $obj->depth*50 . 'px">
-				<input id="select-' . $obj->getName() . $obj->depth . '" type="checkbox" class="selectCheckBox checkbox">
-				<label for="select-' . $obj->getName() . $obj->depth . '">
-					<div class="thumbnail"';
-						if($obj instanceof Folder){
-							echo 'style="background-image:url(/index.php/apps/theming/img/core/filetypes/folder.svg?v=0); background-size: 32px;">';
 
-						} else {
-							echo 'style="background-image:url(/index.php/apps/theming/img/core/filetypes/package-x-generic.svg?v=0); background-size: 32px;">';
-						}
-					echo '</div>
+	/**
+	 *
+	 *	If you have two FileObjects at the same depth and with the same name in different folders, the checkbox might not work......
+	 */
+	function printHTML(FileObject $obj){ ?>
+		<tr>
+			<td class="filename" style="padding-left: <?php p($obj->depth*50); ?>px">
+				<input id="select-<?php p($obj->getName() . $obj->depth); ?>" type="checkbox" class="selectCheckBox checkbox">
+				<label for="select-<?php p($obj->getName() . $obj->depth); ?>">
+					<div class="thumbnail" style='background-image:url( <?php p(getRightIcon($obj)) ?> ); background-size: 32px'></div>
 					<span class="hidden-visually">Select</span>
 				</label>
 				<a class="name" href="#">
 					<span class="nametext">
-						<span class="innernametext">' . str_replace(pathinfo($obj->getName())['extension'],"",$obj->getName()) . '</span>
-						<span class="extension">' . pathinfo($obj->getName())['extension'] . '</span>
+					<span class="innernametext"><?php p(str_replace(pathinfo($obj->getName())['extension'],"",$obj->getName())); ?></span>
+					<span class="extension"><?php p(pathinfo($obj->getName())['extension']); ?></span>
 					</span>
 				</a>
 			</td>
-			<td class="filesize" style="color:rgb(160,160,160)">3 KB</td>
+			<td class="filesize" style="color:rgb(160,160,160)"></td>
 			<td></td>
-		</tr>';
-
+		</tr>
+	<?php
+	}
+	function getRightIcon(FileObject $obj){
+		if($obj instanceof Folder){
+			return \OC::$server->getURLGenerator()->getAbsoluteURL(\OCP\Util::linkToRoute('theming.Icon.getThemedIcon',["app"=>'core',"image"=>'filetypes/folder.svg']));
+		} else {
+			return \OC::$server->getURLGenerator()->getAbsoluteURL(\OCP\Util::linkToRoute('theming.Icon.getThemedIcon',["app"=>'core',"image"=>'filetypes/package-x-generic.svg']));
+		}
 	}
 	class BaseFile extends FileObject{
 		public function __construct($name,$path){

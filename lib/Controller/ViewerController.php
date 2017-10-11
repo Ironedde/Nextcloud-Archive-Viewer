@@ -14,8 +14,10 @@ use OCP\Files\FileInfo;
 use OC\Files\Filesystem;
 use OC\Files\View;
 
-
 use OCP\IUserSession;
+
+use OCP\IURLGenerator;
+
 
 class ViewerController extends Controller {
 	private $userId;
@@ -23,17 +25,15 @@ class ViewerController extends Controller {
 	private $logger;
 	private $userSession;
 	private $server_userSession;
-	private $webRoot;
 	private $home;
 
-	public function __construct($AppName, IRequest $request,ILogger $logger,IRootFolder $root, IUserSession $userSession,$server_userSession, $webRoot){
+
+	public function __construct($AppName, IRequest $request,ILogger $logger,IRootFolder $root, IUserSession $userSession){
 		parent::__construct($AppName, $request);
 		$this->userId = $UserId;
         $this->userSession = $userSession;
-		$this->server_userSession = $server_userSession;
 		$this->root = $root;
-		$this->logger  = $logger;
-		$this->webRoot = $webRoot;
+		$this->logger = $logger;
 	}
 
 	/**
@@ -59,7 +59,7 @@ class ViewerController extends Controller {
 		$home = $this->userSession->getUser()->getHome();
         $baseFolder = $this->root->getUserFolder($uid);
 		//
-        $params = [
+		$params = [
 			"webRoot" => $home,
 			"root" => $this->root->getPath(),
 			"fileSize" => $file->getSize(),
